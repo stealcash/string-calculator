@@ -26,5 +26,11 @@ export const add = (numbers: string): number => {
 
   const numArray = numbers.split(delimiter).map((item)=>Number(item))
 
+
+// check for negative number
+const negativeNumbers = numArray.filter((num)=>num <0);
+if (negativeNumbers.length > 0 ){
+    throw new Error (`negative numbers not allowed: ${negativeNumbers.join(", ")}`)
+}
   return numArray.reduce((sum,num)=>sum+num,0)
 }
