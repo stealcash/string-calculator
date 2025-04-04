@@ -5,7 +5,25 @@ export const add = (numbers: string): number => {
   if (!numbers) return 0;  
   
   // add default delimter regex
-  const delimiter = /,|\n/;
+  let delimiter = /,|\n/;
+  
+  //check if string come with custom delimiters
+  if(numbers.startsWith("//")){
+    // find delimiter betwwen // and \n , it can be  multiple character
+    const matchDelimiter = numbers.match(/^\/\/(.+)\n/); 
+    if (matchDelimiter) {
+        //get first captured group or it can be single character
+        //remove special character in delimiter before using regex, as it can break regex
+        const escapedDelimiter = matchDelimiter[1].replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+        delimiter = new RegExp(escapedDelimiter, "g");
+
+         numbers = numbers.substring(matchDelimiter[0].length)
+         numbers = numbers.replace(/\n/g,matchDelimiter[1])
+   }
+  }
+
+
+
   const numArray = numbers.split(delimiter).map((item)=>Number(item))
 
   return numArray.reduce((sum,num)=>sum+num,0)
