@@ -15,5 +15,8 @@ describe("string calculator - test cases of add function", () => {
     });
     test("should support custom delimiters", () => {
         expect(add("//;\n1;2")).toBe(3);
-      });
+    });
+    test("should throw an error for if negative number in string", () => {
+        expect(() => add("-1,2,-3")).toThrow("negative numbers not allowed: -1, -2, -3");
+    });
 });
