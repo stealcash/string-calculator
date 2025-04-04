@@ -4,12 +4,15 @@ import "../styles/style.css"
 const StringCalculator: React.FC = () => {
     const [input, setInput] = useState("");
     const [result, setResult] = useState<number | string>("");
-
+    const [error,setError] = useState<null|string>(null)
     const handleCalculate = () => {
         try {
-            setResult(add(input)); // Call the add function
-        } catch (error: any) {
-            setResult(error?.message); // Handle errors
+            setResult(add(input)); 
+            setError(null)
+        } catch (error) {
+            const err = error as Error;
+            //check if function throw an error , show it to ui
+            setError(err?.message ?? "Something went Wrong");
         }
     };
 
@@ -28,6 +31,8 @@ const StringCalculator: React.FC = () => {
             />
             <button className="calculate_btn" onClick={handleCalculate}>Calculate</button>
             <p>Result:<b> {result}</b></p>
+
+            {error && <div style={{color:"red"}}>{error}</div>}
         </div>
     );
 };

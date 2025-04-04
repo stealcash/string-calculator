@@ -25,5 +25,8 @@ describe("string calculator - test cases of add function", () => {
     test("should support custom delimiters with multicharcter", () => {
         expect(add("//;;s\n1;;s2")).toBe(3);
     });
+    test("should throw an error for invalid input value with non-numeric characters except delimiters", () => {
+        expect(() => add("1,a,3")).toThrow("Given String is not valid: 1,a,3");
+      });
 
 });
