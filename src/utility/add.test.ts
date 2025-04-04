@@ -13,4 +13,7 @@ describe("string calculator - test cases of add function", () => {
     test("should handle new line as a delimiter", () => {
         expect(add("1\n2,3\n4")).toBe(10);
     });
+    test("should support custom delimiters", () => {
+        expect(add("//;\n1;2")).toBe(3);
+      });
 });
