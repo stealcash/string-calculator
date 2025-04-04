@@ -22,5 +22,8 @@ describe("string calculator - test cases of add function", () => {
     test("should return the number itself if single number provided", () => {
         expect(add("5")).toBe(5);
     });
+    test("should support custom delimiters with multicharcter", () => {
+        expect(add("//;;s\n1;;s2")).toBe(3);
+    });
 
 });
