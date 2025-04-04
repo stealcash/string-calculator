@@ -2,8 +2,8 @@
 // function for addition of number by finding in string and seprated by delimiter
 export const add = (numbers: string): number => {
   //check if string lenth is 0 
-  if (!numbers) return 0;  
-  
+  if (!numbers) return 0; 
+  numbers = numbers.replace(/\\n/g,'\n');
   // add default delimter regex
   let delimiter = /,|\n/;
   
