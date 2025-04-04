@@ -19,8 +19,8 @@ describe("string calculator - test cases of add function", () => {
     test("should throw an error for if negative number in string", () => {
         expect(() => add("-1,2,-3")).toThrow("negative numbers not allowed: -1, -2, -3");
     });
-    test("should return the number itself if only one number is provided", () => {
+    test("should return the number itself if single number provided", () => {
         expect(add("5")).toBe(5);
-      });
-    
+    });
+
 });
