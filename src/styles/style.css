@@ -1,0 +1,47 @@
+.container {
+    width: 400px;
+    height: auto;
+    background: #fff5b6;
+    text-align: center;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+h1{
+    margin: 0.5rem;
+    padding: 0;
+}
+label{
+    text-align: left;
+    float: left;
+    width: 100%;
+    line-height: 1;
+    font-size: 1rem;
+    padding: 0;
+}
+
+label p{
+    padding: 0;
+    line-height: 1rem;
+    margin: 0.5rem 0;
+}
+label span{
+    color: rgb(228, 96, 96);
+    margin-left: 0.2rem;
+}
+
+input{
+    margin: 10px 0;
+    font-size: 1rem;
+    line-height: 2;
+    padding: 0 0.2rem;
+    box-sizing: border-box;
+    border-radius: 4px;
+    box-shadow: none;
+    border: 1px solid #9a9a9a;
+    width: 100%;
+}
+.calculate_btn{
+    color: white;
+    background-color: #6363ef;
+    width: 100%;
+}

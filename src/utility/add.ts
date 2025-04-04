@@ -14,7 +14,7 @@ export const add = (numbers: string): number => {
     if (matchDelimiter) {
         //get first captured group or it can be single character
         //remove special character in delimiter before using regex, as it can break regex
-        const escapedDelimiter = matchDelimiter[1].replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+        const escapedDelimiter = matchDelimiter[1].replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&');
         delimiter = new RegExp(escapedDelimiter, "g");
 
          numbers = numbers.substring(matchDelimiter[0].length)
