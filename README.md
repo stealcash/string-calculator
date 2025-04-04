@@ -42,3 +42,6 @@ To run the Jest tests:
 ```sh
 npm test
 ```
+## Demo
+
+URL: https://stealcash.github.io/string-calculator/
