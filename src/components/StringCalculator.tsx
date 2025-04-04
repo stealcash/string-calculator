@@ -20,7 +20,7 @@ const StringCalculator: React.FC = () => {
         <div className="container">
             <h2>String Calculator</h2>
             <label>Enter numbers
-                <p>(Format:<span>//[delimter]\n[numbers]</span>)</p>
+                <p>(Format:<span title="E.g //;\n12;4 OR //;;\n5;;9">//[delimter]\n[numbers]</span>)</p>
             </label>
 
             <input
